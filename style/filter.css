@@ -1,0 +1,101 @@
+#filter-section {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#filters {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.filter-dropdown {
+    transition: all 0.3s;
+    background-color: white;
+    border-radius: 11px;
+    height: 55px;
+    overflow: hidden;
+}
+
+.filter-dropdown>button {
+    line-height: 22px;
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    background: transparent;
+    gap: 63px;
+}
+
+.filter-dropdown .filter-search{
+    border: 1px solid #C6C6C6;
+    border-radius: 2px;
+    padding: 8px;
+    margin: 8px;
+    width: 90%;
+}
+
+.filter-dropdown>ul {
+    padding: 0;
+    margin: 5px 0;
+    overflow: scroll;
+    height: -webkit-fill-available;
+}
+
+.filter-dropdown>ul>li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+
+.filter-dropdown>ul>li,
+.filter-dropdown>ul>li>label {
+    cursor: pointer;
+}
+
+.active-filter {
+    height: 325px;
+}
+
+.active-filter>button>img {
+    transform: rotate(180deg);
+}
+
+.filter-dropdown>ul>li .filter-label {
+    width: 100%;
+    padding: 10px 20px;
+}
+.filter-dropdown>ul>li .filter-label::first-letter {text-transform: capitalize;}
+
+.filter-dropdown>ul>li .filter-label:hover {
+    background-color: #FFD15B;
+}
+
+.filter-checkbox {
+    display: none;
+}
+
+#tags-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+}
+.tag{
+    background-color: #FFD15B;
+    padding: 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    font-size: 14px;
+    width: fit-content;
+}
+.tag img{ height: 10px; aspect-ratio: 1; padding: 5px; box-sizing: content-box; transition: background-color 250ms linear;border-radius: 50%;}
+.tag img:hover{ cursor: pointer; background-color: antiquewhite;}
+.tag p::first-letter {text-transform: capitalize;}

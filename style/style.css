@@ -1,0 +1,74 @@
+/* HEADER */
+header{
+    background-image: url(../public/images/hero-bg.jpeg);
+    background-size:cover;
+    height: 667px;
+    display: flex;
+    flex-direction: column;
+}
+
+header > img {
+    width: 207px;
+    align-self:flex-start;
+}
+
+#hero-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    height: 100%;
+    width: 65%;
+}
+
+.hero-title{
+    color: #FFD15B;
+    font-size: 44px;
+    text-align: center;
+    font-family: "Anton";
+    max-width: 80%;
+}
+
+#search-button-group{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+}
+
+#search-button-group > input{
+    padding: 1rem;
+}
+#search-button-group > button{
+    background-color: #1B1B1B;
+    color: #000;
+    height: fit-content;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    padding: 0.5rem;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* MAIN SECTION */
+main{
+    background-color: #EDEDED;
+    padding: 1rem 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+main p{
+    margin: 0;
+}
+
+#recette-count{
+    font-family: Anton;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 32px;
+}
