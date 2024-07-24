@@ -46,19 +46,21 @@ export default class Filter {
       filterCheckBox.classList.add("filter-checkbox");
 
       filterCheckBox.addEventListener("change", (e) => {
+        const searchForm = document.getElementById("searchForm");
+        const searchValue = searchForm.querySelector("input").value;
         new Promise((resolve) => {
           if (e.target.checked) {
             activeFilter.push(e.target.value);
             filterOption.style.backgroundColor = "#FFD15B";
             resolve();
           } else if (e.target.checked === false) {
-            delete activeFilter[activeFilter.indexOf(e.target.value)]
+            activeFilter.splice(activeFilter.indexOf(e.target.value), 1);
             filterOption.style.backgroundColor = "initial";
             resolve();
           }
         }).then(() => {
           tags(activeFilter);
-          cardManager.filterCards(activeFilter);
+          cardManager.filterCards(activeFilter, searchValue);
         });
       });
       //Append
@@ -73,9 +75,11 @@ export default class Filter {
         if (
           item.textContent.toLowerCase().includes(e.target.value.toLowerCase())
         ) {
-          item.style.display = "block";
+          item.classList.remove("hidden");
+          item.classList.add("block");
         } else {
-          item.style.display = "none";
+          item.classList.remove("block");
+          item.classList.add("hidden");
         }
       });
     });

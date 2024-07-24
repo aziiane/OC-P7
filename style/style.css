@@ -38,10 +38,12 @@ header > img {
     position: relative;
 }
 
-#search-button-group > input{
+#search-button-group #searchForm{width: 100%;}
+
+#search-button-group input{
     padding: 1rem;
 }
-#search-button-group > button{
+#search-button-group button{
     background-color: #1B1B1B;
     color: #000;
     height: fit-content;
@@ -71,4 +73,11 @@ main p{
     font-weight: 400;
     font-size: 21px;
     line-height: 32px;
+}
+
+.hidden{
+    display: none;
+}
+.block{
+    display: block;
 }
