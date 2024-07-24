@@ -1,4 +1,5 @@
 import { recipes } from "../recipes.js";
+import filterByTags from "./functions/filterByTags.js";
 
 export default class CardManager {
   constructor() {
@@ -6,8 +7,10 @@ export default class CardManager {
   }
 
   countDisplayedCards() {
-    let acc = 0
-    this.cardsContainer.childNodes.forEach((node) => node.style.display !== "none" && acc++);
+    let acc = 0;
+    this.cardsContainer.childNodes.forEach(
+      (node) => node.style.display !== "none" && acc++
+    );
     const recetteCountContainer = document
       .querySelector("#recette-count")
       .querySelector("span");
@@ -15,31 +18,10 @@ export default class CardManager {
     return (recetteCountContainer.innerText = acc);
   }
 
-  filterCards(activeFilters) {
-    this.cardsContainer.childNodes.forEach((card) => {
-      const currentRecipe = recipes.find(
-        (recipe) => recipe.id.toString() === card.id
-      );
+  filterCards(activeFilters, searchValue = "") {
+    filterByTags(activeFilters, this.cardsContainer.childNodes)
 
-      if (
-        activeFilters.every(
-          (filter) =>
-            currentRecipe.ingredients.some((ingredient) =>
-              ingredient.ingredient.toLowerCase().includes(filter.toLowerCase())
-            ) ||
-            currentRecipe.appliance
-              .toLowerCase()
-              .includes(filter.toLowerCase()) ||
-            currentRecipe.ustensils.some((ustensil) =>
-              ustensil.toLowerCase().includes(filter.toLowerCase())
-            )
-        )
-      ) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
-    this.countDisplayedCards()
+    this.countDisplayedCards();
+    return;
   }
 }
