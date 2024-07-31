@@ -1,7 +1,8 @@
 import getRecipeDataById from "./getRecipeDataById.js";
 
 export default function filterBySearch(searchValue, cardsContainer) {
-  for (const card of cardsContainer) {
+  const arrayCardContainer = Array.from(cardsContainer);
+  for (const card of arrayCardContainer) {
     const currentRecipe = getRecipeDataById(card.id);
     if (
       card.style.display !== "none" &&
