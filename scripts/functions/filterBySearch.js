@@ -7,11 +7,9 @@ export default function filterBySearch(searchValue, cardsContainer) {
       card.style.display !== "none" &&
       currentRecipe.name.toLowerCase().includes(searchValue.toLowerCase())
     ) {
-      card.classList.remove("hidden");
-      card.classList.add("block");
+      card.style.display = "block";
     } else {
-      card.classList.remove("block");
-      card.classList.add("hidden");
+      card.style.display = "none";
     }
   }
 }

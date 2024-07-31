@@ -75,23 +75,13 @@ export default class Filter {
         if (
           item.textContent.toLowerCase().includes(e.target.value.toLowerCase())
         ) {
-          item.classList.remove("hidden");
-          item.classList.add("block");
+          item.style.display = "block";
         } else {
-          item.classList.remove("block");
-          item.classList.add("hidden");
+          item.style.display = "none";
         }
       });
     });
 
     filterSection.appendChild(this.filterDropdown);
   }
-}
-
-{
-  /* <div id="ustensil-filters" class="filter-dropdown">
-<button class="btn">
-  Ustensils <img src="/public//icons/arrow-bottom.svg" />
-</button>
-</div> */
 }
