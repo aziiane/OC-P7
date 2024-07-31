@@ -1,4 +1,4 @@
-import { recipes } from "../recipes.js";
+import filterBySearch from "./functions/filterBySearch.js";
 import filterByTags from "./functions/filterByTags.js";
 
 export default class CardManager {
@@ -14,14 +14,14 @@ export default class CardManager {
     const recetteCountContainer = document
       .querySelector("#recette-count")
       .querySelector("span");
-    console.log(acc);
     return (recetteCountContainer.innerText = acc);
   }
 
   filterCards(activeFilters, searchValue = "") {
-    filterByTags(activeFilters, this.cardsContainer.childNodes)
+    filterByTags(activeFilters, this.cardsContainer.childNodes);
+    filterBySearch(searchValue, this.cardsContainer.childNodes);
 
     this.countDisplayedCards();
-    return;
+    return
   }
 }

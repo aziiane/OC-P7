@@ -13,10 +13,9 @@ export default function tags(activeFilters) {
       tagSection.appendChild(tags);
       tags.querySelector('img').addEventListener("click", (e) => {
         const tag = e.target.closest(".tag");
-        const tagContent = tag.querySelector('p').innerText;
-        console.log(document.getElementById(tagContent))
+        // const tagContent = tag.querySelector('p').innerText;
+        // console.log(document.getElementById(tagContent))
         tag.remove();
-        
         activeFilters.splice(activeFilter.indexOf(e.target.value), 1);
         cardManager.filterCards(activeFilters, searchValue);
       });

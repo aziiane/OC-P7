@@ -87,11 +87,3 @@ export default class Filter {
     filterSection.appendChild(this.filterDropdown);
   }
 }
-
-{
-  /* <div id="ustensil-filters" class="filter-dropdown">
-<button class="btn">
-  Ustensils <img src="/public//icons/arrow-bottom.svg" />
-</button>
-</div> */
-}
