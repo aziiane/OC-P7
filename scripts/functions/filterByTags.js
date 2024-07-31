@@ -1,4 +1,3 @@
-import filterBySearch from "./filterBySearch.js";
 import getRecipeDataById from "./getRecipeDataById.js";
 
 const filterByTags = (activeFilters, cardsContainer) => {
