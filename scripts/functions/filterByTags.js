@@ -1,6 +1,7 @@
 import getRecipeDataById from "./getRecipeDataById.js";
 
 const filterByTags = (activeFilters, cardsContainer) => {
+  console.log('filterByTags')
   const searchForm = document.getElementById("searchForm");
   const searchValue = searchForm.querySelector("input").value;
   cardsContainer.forEach((card) => {

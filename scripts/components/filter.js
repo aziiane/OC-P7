@@ -75,11 +75,9 @@ export default class Filter {
         if (
           item.textContent.toLowerCase().includes(e.target.value.toLowerCase())
         ) {
-          item.classList.remove("hidden");
-          item.classList.add("block");
+          item.style.display = "block";
         } else {
-          item.classList.remove("block");
-          item.classList.add("hidden");
+          item.style.display = "none";
         }
       });
     });
