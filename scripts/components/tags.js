@@ -9,7 +9,7 @@ export default function tags(activeFilters) {
     if (activeFilter !== undefined) {
       const tags = document.createElement("div");
       tags.classList.add("tag");
-      tags.innerHTML = `<p>${activeFilter}</p><img src="/public/icons/cross.svg" />`;
+      tags.innerHTML = `<p>${activeFilter}</p><img src="./public/icons/cross.svg" />`;
       tagSection.appendChild(tags);
       tags.querySelector('img').addEventListener("click", (e) => {
         const tag = e.target.closest(".tag");

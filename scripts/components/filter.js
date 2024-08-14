@@ -11,7 +11,7 @@ export default class Filter {
 
     this.filterButton = document.createElement("button");
     this.filterButton.id = `${this.label}-filter`;
-    this.filterButton.innerHTML = `${this.label} <img src="/public/icons/arrow-bottom.svg" />`;
+    this.filterButton.innerHTML = `${this.label} <img src="./public/icons/arrow-bottom.svg" />`;
 
     this.filterButton.addEventListener("click", () =>
       this.filterDropdown.classList.toggle("active-filter")
