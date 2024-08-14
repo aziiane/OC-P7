@@ -33,7 +33,7 @@ export default class Card {
   }
   setRecipeImage() {
     // Create the recipe image + append it to the card header
-    this.cardImage.src = `/public/recettes/${this.recipe.image}`;
+    this.cardImage.src = `./public/recettes/${this.recipe.image}`;
     this.cardImage.alt = "recette image";
     this.cardHeader.appendChild(this.cardImage);
   }
