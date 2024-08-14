@@ -22,7 +22,7 @@ const filterByTags = (activeFilters, cardsContainer) => {
     ) {
       card.style.display = "block";
     } else {
-      card.style.display = "none";
+      activeFilters !== null ? card.style.display = "none" : card.style.display = "block";
     }
   });
 };
